@@ -1,27 +1,43 @@
 import './App.css';
 import Button from './components/Button';
-import {Fragment}  from 'react';
+import Form from './components/Form';
+import Header from './components/Header';
 
 function App() {
-  const colors = [
-    'green',
-    'red',
-    'black'
+  const btnButton = [
+    {
+      id: 1,
+      text: 'ღილაკი 1',
+    },
+    {
+      id: 2,
+      text: 'ღილაკი 2',
+    },
+    {
+      id: 3,
+      text: 'ღილაკი 3',
+    },
+    {
+      id: 4,
+      text: 'ღილაკი 4',
+    }
+
   ]
+
   return (
     <div className="App">
-      <Button  text='ღილაკი 1'/>
-      <Button text='ღილაკი 2'  btClass='specialButton' btStyle={{fontsize: '30px', color: 'green'}} />
-      {
-        colors.map((color, index)=>{
-          return(
-            <Fragment  key={index}>
-              <h3>color</h3>
-              <Button text={color} btStyle={{backgroundColor: color, color: 'white'}} onClick={()=> alert(color)} />
-            </Fragment>
-          )
-        })
-      }
+      <Header />
+      <div className='mainDiv'>
+        {
+          btnButton.filter((object) => object.id > 1).map((item, index) =>{
+            return(
+              <Button key={item.id} text={item.text}/>
+            )
+          })
+        }
+        <Form />
+
+      </div>
     </div>
   );
 }

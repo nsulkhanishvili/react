@@ -1,5 +1,14 @@
 .App {
-  text-align: center;
+  text-align: left;
+}
+
+.navLink {
+  display: block;
+  color: aqua;
+  font-size: 30px;
+  margin-top: 5px;
+  font-weight: 700;
+
 }
 
 .Button {
@@ -10,4 +19,26 @@
 
 .specialButton {
   background-color: black;
+}
+
+.form {
+  background-color: coral;
+  padding: 20px;
+  width: 100%;
+  border-radius: 18px;
+  border: 2px solid grey;
+}
+
+.calculator {
+  padding: 20px;
+  margin: 20px;
+  border-radius: 18px;
+  background-color: cadetblue;
+}
+
+.calculator>input {
+
+  margin-right: 15px;
+  width: 50px;
+  height: 20px;
 }
