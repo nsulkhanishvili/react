@@ -21,8 +21,15 @@
   background-color: black;
 }
 
-.form {
+.Counterparent {
+  padding: 15px;
+  background-color: cyan;
+}
+
+.form,
+.Counter {
   background-color: coral;
+  margin-top: 15px;
   padding: 20px;
   width: 100%;
   border-radius: 18px;
