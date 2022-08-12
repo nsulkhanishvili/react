@@ -1,15 +1,15 @@
 import Button from "./Button";
 
-export default function TodoItem({completed, id, text, onChangePassed}) {
-    return(
-        <li  >
-            <input 
-                type="checkbox" 
-                cheaked={completed} 
-                onChange={() => onChangePassed(id)} 
-         />
-            <span className={completed ? "done" : ''} >{text}</span>
-            <Button text="Delete"/>
-     </li>
+export default function TodoItem({ id, text, completed, onChangePassed}) {
+    return (
+        <li>
+        <input
+          type="checkbox"
+          checked={completed}
+          onChange={() => onChangePassed(id)}
+        />
+        <span className={completed ? "done" : ""}>{text}</span>
+        <Button text="Delete" />
+      </li>
     )
 }

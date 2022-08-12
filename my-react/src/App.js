@@ -1,46 +1,28 @@
 import './App.css';
-import CounterParent from './components/CounterParent';
-import TodoApp from './components/TodoApp';
-import Button from './components/Button';
-import Form from './components/Form';
+import { Routes, Route } from "react-router-dom";
 import Header from './components/Header';
+import Footer from './components/Footer';
+import Home from './components/Home';
+import About from './components/About';
+import Contact from'./components/Contact';
+import Prodacts from './components/Prodacts';
+import Prodact from './components/Prodact';
+
 
 function App() {
-  const btnButton = [
-    {
-      id: 1,
-      text: 'ღილაკი 1',
-    },
-    {
-      id: 2,
-      text: 'ღილაკი 2',
-    },
-    {
-      id: 3,
-      text: 'ღილაკი 3',
-    },
-    {
-      id: 4,
-      text: 'ღილაკი 4',
-    }
-
-  ]
-
   return (
     <div className="App">
       <Header />
       <div className='mainDiv'>
-        {
-          btnButton.filter((object) => object.id > 1).map((item, index) =>{
-            return(
-              <Button key={item.id} text={item.text}/>
-            )
-          })
-        }
-        <Form />
-        <CounterParent />
-        <TodoApp />
+        <Routes>
+          <Route path="/" element={<Home /> } />
+          <Route path="About" element={<About /> } />
+          <Route path="Contact" element={<Contact /> } />
+          <Route path="Prodacts" element={<Prodacts />} />
+          <Route path="Prodacts/:id" element={<Prodact />} />
+        </Routes>
       </div>
+      <Footer />
     </div>
   );
 }
