@@ -1,5 +1,8 @@
+@import "./styles/variables.scss";
+
 .App {
   text-align: left;
+  color: $primary-color;
 }
 
 .navLink {
@@ -9,16 +12,6 @@
   margin-top: 5px;
   font-weight: 700;
 
-}
-
-.Button {
-  background-color: pink;
-  width: 100px;
-  height: 50px;
-}
-
-.specialButton {
-  background-color: black;
 }
 
 .Counterparent {
@@ -73,4 +66,9 @@
   height: 300px;
   object-fit: cover;
   margin: 0 auto;
+}
+
+.Bear {
+  width: 200px;
+  height: 300px;
 }

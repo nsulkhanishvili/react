@@ -1,15 +1,14 @@
-export default function Button({type, text, btClass, btStyle, onClick}) {
-    return(
-        <button
-            onClick={onClick}
-            className={`Button ${btClass ? btClass : ""}`} 
-            style={btStyle ? btStyle : {color: 'white'} }  
-            type={type}
-            
-        >
-           {text}
-        </button>
+import classes from '../styles/Button.module.scss';
 
-    )
-    
+export default function Button({type, text, customClass, customStyle, onClick }) {
+  return (
+    <button
+      onClick={onClick}
+      className={`${classes.Button} ${customClass ? customClass : ""}`}
+      style={customStyle ? customStyle : { color: "white" }}
+      type={type}
+    >
+      {text}
+    </button>
+  );
 }

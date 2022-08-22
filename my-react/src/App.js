@@ -1,4 +1,4 @@
-import './App.css';
+import './App.scss';
 import { Routes, Route } from "react-router-dom";
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -9,11 +9,56 @@ import Prodacts from './components/Prodacts';
 import Prodact from './components/Prodact';
 
 
+//* i18next */
+
+import i18n from "i18next";
+import { initReactI18next, useTranslation } from "react-i18next";
+import { useEffect, useState } from 'react';
+
+const resources = {
+  en: {
+    translation: require('./i18n/en.json')
+  },
+  fr: {
+    translation: require('./i18n/fr.json')
+  },
+  ka: {
+    translation: require('./i18n/ka.json')
+  }
+};
+
+i18n
+  .use(initReactI18next) 
+  .init({
+    resources,
+    lng: "ka",
+    interpolation: {
+      escapeValue: false 
+    }
+  });
+
+
 function App() {
+
+  const { t } = useTranslation();
+  const [language, setLanguage] = useState('en')
+
+  useEffect(() => {
+    Changelen(language);
+  }, [language]);
+
+  function Changelen(lng){
+        i18n.changeLanguage(lng);    
+  }
+
   return (
     <div className="App">
       <Header />
       <div className='mainDiv'>
+        <h3>{t('Welcome to React')}</h3>
+        <button onClick={() => setLanguage('en')}>EN</button>
+        <button onClick={() => setLanguage('fr')}>FR</button>
+        <button onClick={() => setLanguage('ka')}>KA</button>
         <Routes>
           <Route path="/" element={<Home /> } />
           <Route path="About" element={<About /> } />
