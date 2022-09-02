@@ -1,10 +1,12 @@
-import {useState} from 'react';
+import {useContext, useState} from 'react';
+import ThemeContext from './ThemeContext';
 
 export default function Form() {
     const [inputValue, setInputValue] = useState('მნიშვნელობა');
     const [title, setTiTle] = useState();
     const [num1, setNum1] = useState ();
     const [num2, setNum2] = useState ();
+    const {theme, setTheme} = useContext(ThemeContext)
 
     function submit(e) {
         e.preventDefault();
@@ -15,7 +17,7 @@ export default function Form() {
         
     }
     return(
-        <form className="form" action="/FormSubmited" onSubmit={submit} >
+        <form className={`form ${theme}`} action="/FormSubmited" onSubmit={submit} >
             <h2>სათაური: {title}</h2>
             <p>{inputValue}</p>
             <input type="text" value={inputValue} onChange={(e)=>setInputValue(e.target.value)}/>

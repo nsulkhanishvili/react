@@ -1,4 +1,6 @@
+@import "~bootstrap/scss/bootstrap";
 @import "./styles/variables.scss";
+
 
 .App {
   text-align: left;
@@ -71,4 +73,17 @@
 .Bear {
   width: 200px;
   height: 300px;
+}
+
+.bootstrapDiv {
+  background-color: chocolate;
+  height: 200px;
+}
+
+.light {
+  background-color: azure;
+}
+
+.dark {
+  background-color: dimgray;
 }

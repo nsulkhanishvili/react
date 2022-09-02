@@ -8,12 +8,16 @@ import Contact from'./components/Contact';
 import Prodacts from './components/Prodacts';
 import Prodact from './components/Prodact';
 
+//** Context */
+import ThemeContext from './components/ThemeContext';
+
 
 //* i18next */
 
 import i18n from "i18next";
 import { initReactI18next, useTranslation } from "react-i18next";
 import { useEffect, useState } from 'react';
+import Bootstrap from './components/Bootstrap';
 
 const resources = {
   en: {
@@ -39,6 +43,7 @@ i18n
 
 
 function App() {
+  const [theme, setTheme] = useState('light');
 
   const { t } = useTranslation();
   const [language, setLanguage] = useState('en')
@@ -52,23 +57,29 @@ function App() {
   }
 
   return (
-    <div className="App">
-      <Header />
-      <div className='mainDiv'>
-        <h3>{t('Welcome to React')}</h3>
-        <button onClick={() => setLanguage('en')}>EN</button>
-        <button onClick={() => setLanguage('fr')}>FR</button>
-        <button onClick={() => setLanguage('ka')}>KA</button>
-        <Routes>
-          <Route path="/" element={<Home /> } />
-          <Route path="About" element={<About /> } />
-          <Route path="Contact" element={<Contact /> } />
-          <Route path="Prodacts" element={<Prodacts />} />
-          <Route path="Prodacts/:id" element={<Prodact />} />
-        </Routes>
+    <ThemeContext.Provider value={{
+      theme: theme,
+      setTheme: setTheme
+    }}>
+      <div className={`App ${theme}`}>
+        <Header />
+        <div className='mainDiv'>
+          <h3>{t('Welcome to React')}</h3>
+          <button onClick={() => setLanguage('en')}>EN</button>
+          <button onClick={() => setLanguage('fr')}>FR</button>
+          <button onClick={() => setLanguage('ka')}>KA</button>
+          <Routes>
+            <Route path="/" element={<Home /> } />
+            <Route path="About" element={<About /> } />
+            <Route path="Contact" element={<Contact /> } />
+            <Route path="Prodacts" element={<Prodacts />} />
+            <Route path="Prodacts/:id" element={<Prodact />} />
+          </Routes>
+          <Bootstrap />
+        </div>
+        <Footer />
       </div>
-      <Footer />
-    </div>
+    </ThemeContext.Provider>
   );
 }
 
