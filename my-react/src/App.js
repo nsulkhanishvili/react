@@ -18,6 +18,7 @@ import i18n from "i18next";
 import { initReactI18next, useTranslation } from "react-i18next";
 import { useEffect, useState } from 'react';
 import Bootstrap from './components/Bootstrap';
+import Registration from './components/Registration';
 
 const resources = {
   en: {
@@ -74,6 +75,7 @@ function App() {
             <Route path="Contact" element={<Contact /> } />
             <Route path="Prodacts" element={<Prodacts />} />
             <Route path="Prodacts/:id" element={<Prodact />} />
+            <Route path="Registration" element={<Registration />} />
           </Routes>
           <Bootstrap />
         </div>

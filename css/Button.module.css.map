@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,OAAO,CAAC;EACJ,gBAAgB,EAAE,IAAI;EACtB,KAAK,EAAE,KAAK;EACZ,MAAM,EAAE,IAAI;CACf;;AAED,AAAA,cAAc,CAAC;EACX,gBAAgB,EAAE,KAAK;CAC1B",
+    "sources": [
+        "../my-react/src/styles/Button.module.scss"
+    ],
+    "names": [],
+    "file": "Button.module.css"
+}

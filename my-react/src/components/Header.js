@@ -6,7 +6,7 @@ import ThemeContext from "./ThemeContext";
 export default function Header() {
     const {theme, setTheme} = useContext(ThemeContext);
     const { t} = useTranslation();
-    const navigation = ['Home', 'About', 'Contact', 'Prodacts']
+    const navigation = ['Home', 'About', 'Contact', 'Prodacts', 'Registration']
     function changeTheme() {
         if (theme === 'light') {
             setTheme('dark')
